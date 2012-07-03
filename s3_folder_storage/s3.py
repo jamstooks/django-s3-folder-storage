@@ -23,4 +23,4 @@ class DefaultStorage(S3BotoStorage):
 
     def __init__(self, *args, **kwargs):
         kwargs['location'] = settings.DEFAULT_S3_PATH
-        super(MediaStorage, self).__init__(*args, **kwargs)
+        super(DefaultStorage, self).__init__(*args, **kwargs)
