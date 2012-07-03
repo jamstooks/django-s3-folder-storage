@@ -22,5 +22,5 @@ setup(name='django-s3-folder-storage',
       'Programming Language :: Python',
       'Framework :: Django',
     ],
-    install_requires=['django-storages'],
+    install_requires=['django-storages', 'boto'],
 )
