@@ -43,3 +43,5 @@ Contributing
 ------------
 
 Think this needs something else? To contribute to `django-s3-folder-storage` create a fork on github. Clone your fork, make some changes, and submit a pull request.
+
+Bugs are great contributions too! Feel free to add an issue on github.
