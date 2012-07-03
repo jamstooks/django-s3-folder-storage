@@ -6,9 +6,9 @@ Quick extension of django-storages' S3BotoStorage to allow separate folders for 
 Installation
 ------------
 
-Use `pip` to install from github (until I get this on PyPI):
+Use `pip` to install from PyPI:
 
-	pip install -e git://github.com/jamstooks/django-s3-folder-storage.git#egg=django_s3_folder_storage-dev
+	pip install django-s3-folder-storage
 
 Add `s3_folder_storage` to your settings.py file:
 
