@@ -8,7 +8,7 @@ def read(fname):
 
 setup(name='django-s3-folder-storage',
     version='0.1',
-    description="Quick extension of django-storages' S3BotoStorage to allow separate media and static folders within a bucket.",
+    description="Quick extension of django-storages' S3BotoStorage to allow separate folders for uploaded and static media within an S3 bucket.",
     author='Benjamin W Stookey',
     author_email='ben.stookey@gmail.com',
     url='https://github.com/jamstooks/django-s3-folder-storage',
