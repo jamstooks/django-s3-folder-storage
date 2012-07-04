@@ -3,6 +3,11 @@ django-s3-folder-storage
 
 Quick extension of django-storages' S3BotoStorage to allow separate folders for uploaded and static media within an S3 bucket.
 
+Overview
+--------
+
+Many of my sites use the same configuration: **static** files are stored in `//s3.amazonaws.com/<bucket_name>/static/` and **uploaded** files are stored somewhere under `//s3.amazonaws.com/<bucket_name>/media/`. Instead of extending S3BotoStorage in every project I decided to build a package. The names of those folders are configurable in `settings.py`.
+
 Installation
 ------------
 
