@@ -5,7 +5,7 @@ django-s3-folder-storage
 [![Number of PyPI downloads](https://pypip.in/d/django-s3-folder-storage/badge.png)](https://crate.io/packages/django-s3-folder-storage/)
 
 
-Quick extension of django-storages' S3BotoStorage to allow separate folders for uploaded and static media within an S3 bucket.
+Quick extension of django-storages' [S3BotoStorage](http://django-storages.readthedocs.org/en/latest/backends/amazon-S3.html) to allow separate folders for uploaded and static media within an S3 bucket.
 
 Overview
 --------
