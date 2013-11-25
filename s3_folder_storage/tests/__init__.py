@@ -1,1 +1,1 @@
-from s3_folder_storage.tests.s3test import *
+from s3_folder_storage.tests.testS3 import *

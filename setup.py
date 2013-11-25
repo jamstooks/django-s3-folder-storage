@@ -13,7 +13,10 @@ setup(name='django-s3-folder-storage',
     author_email='ben.stookey@gmail.com',
     url='https://github.com/jamstooks/django-s3-folder-storage',
     long_description=read("README.md"),
-    packages=['s3_folder_storage'],
+    packages=[
+        's3_folder_storage'
+        's3_folder_storage.tests'
+        ],
     classifiers=[
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
