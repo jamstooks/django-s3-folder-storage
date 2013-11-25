@@ -47,7 +47,27 @@ Here's an example:
 	STATIC_ROOT = "/%s/" % STATIC_S3_PATH
 	STATIC_URL = '//s3.amazonaws.com/%s/static/' % AWS_STORAGE_BUCKET_NAME
 	ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+
+Troubleshooting
+---------------
+
+Depending on how you have your buckets configured and if you want to use SSL,
+you may need to use something like the following:
+
+	MEDIA_URL = 'https://%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME
+	STATIC_URL = 'https://%s.s3.amazonaws.com/static/' % AWS_STORAGE_BUCKET_NAME
+
+As a first step, I recommend trying to get the `collectstatic` management
+command working within your project:
+
+	python manage.py collectstatic
 	
+You can also run the tests:
+
+	python manage.py test s3_folder_storage
+	
+to confirm that files are being written to S3
+
 Contributing
 ------------
 

@@ -1,0 +1,1 @@
+from s3_folder_storage.tests.s3test import *
