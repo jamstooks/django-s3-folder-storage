@@ -14,7 +14,7 @@ setup(name='django-s3-folder-storage',
     url='https://github.com/jamstooks/django-s3-folder-storage',
     long_description=read("README.md"),
     packages=[
-        's3_folder_storage'
+        's3_folder_storage',
         's3_folder_storage.tests'
         ],
     classifiers=[
