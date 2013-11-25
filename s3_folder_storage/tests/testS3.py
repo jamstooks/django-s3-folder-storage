@@ -29,7 +29,7 @@ class ConfigurationTest(TestCase):
         chars = string.ascii_uppercase + string.digits
         self.file_text = ''.join(random.choice(chars) for x in range(6))
         self.file_text = "Dummy Test: %s" % self.file_text
-        self.VERBOSE = True
+        self.VERBOSE = False
 
     def testMediaUpload(self):
         """
