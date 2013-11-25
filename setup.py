@@ -7,7 +7,7 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(name='django-s3-folder-storage',
-    version='0.1',
+    version='0.2',
     description="Quick extension of django-storages' S3BotoStorage to allow separate folders for uploaded and static media within an S3 bucket.",
     author='Benjamin W Stookey',
     author_email='ben.stookey@gmail.com',
@@ -23,5 +23,6 @@ setup(name='django-s3-folder-storage',
         'Programming Language :: Python :: 2.7',
         'Framework :: Django',
     ],
+    test_suite='tests.main',
     install_requires=['django-storages', 'boto'],
 )
