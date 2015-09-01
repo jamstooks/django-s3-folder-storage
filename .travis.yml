@@ -1,0 +1,15 @@
+language: python
+python:
+  - "2.6"
+  - "2.7"
+
+env:
+  - DJANGO_VERSION=1.4.22
+  - DJANGO_VERSION=1.7.10
+  - DJANGO_VERSION=1.8.4
+
+install:
+  - pip install -q Django==$DJANGO_VERSION
+  - pip install requirements_text.txt
+
+script: python tests.py

@@ -2,12 +2,14 @@
 from setuptools import setup, find_packages
 import os
 
+
 # Utility function to read README file
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-setup(name='django-s3-folder-storage',
-    version='0.2',
+setup(
+    name='django-s3-folder-storage',
+    version='0.3',
     description="Quick extension of django-storages' S3BotoStorage to allow separate folders for uploaded and static media within an S3 bucket.",
     author='Benjamin W Stookey',
     author_email='ben.stookey@gmail.com',
