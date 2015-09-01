@@ -1,9 +1,7 @@
 django-s3-folder-storage
 ========================
 
-[![Latest PyPI version](https://pypip.in/v/django-s3-folder-storage/badge.png)](https://crate.io/packages/django-s3-folder-storage/)
-[![Number of PyPI downloads](https://pypip.in/d/django-s3-folder-storage/badge.png)](https://crate.io/packages/django-s3-folder-storage/)
-[![Build Status](https://drone.io/github.com/jamstooks/django-s3-folder-storage/status.png)](https://drone.io/github.com/jamstooks/django-s3-folder-storage/latest)
+[![Build Status](https://travis-ci.org/jamstooks/django-s3-folder-storage.svg)](https://travis-ci.org/jamstooks/django-s3-folder-storage)
 [![Code Climate](https://codeclimate.com/github/jamstooks/django-s3-folder-storage/badges/gpa.svg)](https://codeclimate.com/github/jamstooks/django-s3-folder-storage)
 
 
@@ -43,7 +41,7 @@ Here's an example:
 	AWS_ACCESS_KEY_ID = {{ your key id here }}
 	AWS_SECRET_ACCESS_KEY = {{ your secret key here }}
 	AWS_STORAGE_BUCKET_NAME = {{ your bucket name here }}
-	
+
 	MEDIA_ROOT = '/%s/' % DEFAULT_S3_PATH
 	MEDIA_URL = '//s3.amazonaws.com/%s/media/' % AWS_STORAGE_BUCKET_NAME
 	STATIC_ROOT = "/%s/" % STATIC_S3_PATH
@@ -63,11 +61,11 @@ As a first step, I recommend trying to get the `collectstatic` management
 command working within your project:
 
 	python manage.py collectstatic
-	
+
 You can also run the tests:
 
 	python manage.py test s3_folder_storage
-	
+
 to confirm that files are being written to S3
 
 Contributing
