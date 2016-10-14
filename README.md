@@ -1,5 +1,4 @@
-django-s3-folder-storage
-========================
+# django-s3-folder-storage
 
 [![Build Status](https://travis-ci.org/jamstooks/django-s3-folder-storage.svg)](https://travis-ci.org/jamstooks/django-s3-folder-storage)
 [![Code Climate](https://codeclimate.com/github/jamstooks/django-s3-folder-storage/badges/gpa.svg)](https://codeclimate.com/github/jamstooks/django-s3-folder-storage)
@@ -7,13 +6,11 @@ django-s3-folder-storage
 
 Quick extension of django-storages' [S3BotoStorage](http://django-storages.readthedocs.org/en/latest/backends/amazon-S3.html) to allow separate folders for uploaded and static media within an S3 bucket.
 
-Overview
---------
+## Overview
 
 Many of my sites use the same configuration: **static** files are stored in `//s3.amazonaws.com/<bucket_name>/static/` and **uploaded** files are stored somewhere under `//s3.amazonaws.com/<bucket_name>/media/`. Instead of extending S3BotoStorage in every project I decided to build a package. The names of those folders are configurable in `settings.py`.
 
-Installation
-------------
+## Installation
 
 Use `pip` to install from PyPI:
 
@@ -27,8 +24,7 @@ Add `s3_folder_storage` to your settings.py file:
 	    ...
 	)
 
-Configuration
--------------
+## Configuration
 
 You are essentially using `django-storages` for S3 hosting, so you will be using their settings. The two settings that are specific to `django-s3-folder-storage` are `DEFAULT_S3_PATH` and `STATIC_S3_PATH`.
 
@@ -48,8 +44,7 @@ Here's an example:
 	STATIC_URL = '//s3.amazonaws.com/%s/static/' % AWS_STORAGE_BUCKET_NAME
 	ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
-Troubleshooting
----------------
+## Troubleshooting
 
 Depending on how you have your buckets configured and if you want to use SSL,
 you may need to use something like the following:
@@ -68,8 +63,7 @@ You can also run the tests:
 
 to confirm that files are being written to S3
 
-Contributing
-------------
+## Contributing
 
 Think this needs something else? To contribute to `django-s3-folder-storage` create a fork on github. Clone your fork, make some changes, and submit a pull request.
 

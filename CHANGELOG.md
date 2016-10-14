@@ -1,5 +1,9 @@
 # django-s3-folder-storage
 
+## Version 0.5:
+
+  - just cosmetic
+
 ## Verson 0.4:
 
   - upgraded to boto3
