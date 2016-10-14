@@ -21,6 +21,7 @@ def main():
         'django.contrib.sessions',
         'django.contrib.contenttypes',
         's3_folder_storage',
+        's3_folder_storage.tests.testapp',
     )
     if django.VERSION > (1, 2):
         global_settings.DATABASES = {
@@ -43,7 +44,6 @@ def main():
         'django.middleware.csrf.CsrfViewMiddleware',
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
-        'beproud.django.authutils.middleware.AuthMiddleware',
     )
 
     # custom settings for tests
@@ -51,6 +51,7 @@ def main():
     global_settings.DEFAULT_S3_PATH = "media"
     global_settings.STATICFILES_STORAGE = 's3_folder_storage.s3.StaticStorage'
     global_settings.STATIC_S3_PATH = "static"
+    global_settings.AWS_QUERYSTRING_AUTH = False  # Prefer unsigned S3 URLs.
 
     # requires some envifonment variables
     global_settings.AWS_ACCESS_KEY_ID = os.environ.get(
@@ -61,9 +62,11 @@ def main():
         'AWS_STORAGE_BUCKET_NAME', None)
 
     global_settings.MEDIA_ROOT = '/%s/' % global_settings.DEFAULT_S3_PATH
-    global_settings.MEDIA_URL = 'https://s3.amazonaws.com/%s/media/' % global_settings.AWS_STORAGE_BUCKET_NAME
+    global_settings.MEDIA_URL = 'https://s3.amazonaws.com/%s/media/' % (
+        global_settings.AWS_STORAGE_BUCKET_NAME)
     global_settings.STATIC_ROOT = "/%s/" % global_settings.STATIC_S3_PATH
-    global_settings.STATIC_URL = 'https://s3.amazonaws.com/%s/static/' % global_settings.AWS_STORAGE_BUCKET_NAME
+    global_settings.STATIC_URL = 'https://s3.amazonaws.com/%s/static/' % (
+        global_settings.AWS_STORAGE_BUCKET_NAME)
     global_settings.ADMIN_MEDIA_PREFIX = global_settings.STATIC_URL + 'admin/'
 
     # global_settings.DEFAULT_FILE_STORAGE = 'backends.s3boto.S3BotoStorage'
