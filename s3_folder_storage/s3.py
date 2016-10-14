@@ -2,10 +2,11 @@
     Two classes for media storage
 """
 
-from storages.backends.s3boto import S3BotoStorage
+from storages.backends.s3boto3 import S3Boto3Storage
 from django.conf import settings
 
-class FixedS3BotoStorage(S3BotoStorage):
+
+class FixedS3BotoStorage(S3Boto3Storage):
     """
     fix the broken javascript admin resources with S3Boto on Django 1.4
     for more info see http://code.larlet.fr/django-storages/issue/121/s3boto-admin-prefix-issue-with-django-14
@@ -16,6 +17,7 @@ class FixedS3BotoStorage(S3BotoStorage):
             url += '/'
         return url
 
+
 class StaticStorage(FixedS3BotoStorage):
     """
     Storage for static files.
@@ -25,6 +27,7 @@ class StaticStorage(FixedS3BotoStorage):
     def __init__(self, *args, **kwargs):
         kwargs['location'] = settings.STATIC_S3_PATH
         super(StaticStorage, self).__init__(*args, **kwargs)
+
 
 class DefaultStorage(FixedS3BotoStorage):
     """
